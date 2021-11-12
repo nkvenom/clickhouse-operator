@@ -89,7 +89,7 @@ We can either run [create-prometheus.sh][create-prometheus.sh] or setup the whol
 
   - Setup `clickhouse-operator` alert rules for `prometheus`
   ```bash
-  kubectl apply --namespace=prometheus -f https://raw.githubusercontent.com/Altinity/clickhouse-operator/master/deploy/prometheus/prometheus-alert-rules.yaml
+  kubectl apply --namespace=prometheus -f https://raw.githubusercontent.com/Altinity/clickhouse-operator/master/deploy/prometheus/prometheus-alert-rules-clickhouse.yaml
   ```
     
 At this point Prometheus and AlertManager is up and running. Also, all kubernetes pods which contains `meta.annotations` `prometheus.io/scrape: 'true'`, `promethus.io/port: NNNN`, `prometheus.io/path: '/metrics'`, `prometheus.io/scheme: http`, will discover via prometheus kubernetes_sd_config job `kubernetes-pods`.
